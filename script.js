@@ -1,0 +1,1 @@
+document.getElementById("paragraphe").style.color = 'red'
