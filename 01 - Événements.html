@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Les événements</title>
+		<meta charset="utf-8"/>
+		<script>
+			// Avec la souris : onclick, onmouseover, onmousemove, onmouseout
+			const sourisbouge = (event) => {
+				// pageX et pageY sont les coordonnées relatives à la page entière
+				console.log(`Je bouge au point ${event.pageX} / ${event.pageY}`);
+			}
+			const domEvent = (event, node, message) => {
+				console.log(`${message}} : ${event}`);
+			}
+
+			// Pour les champs (input) : onfocus, onchange, onblur, onkeyup, onkeydown
+			const champEvent = (node, message) => {
+				console.log(`Attention! Event!, ${message}`, node);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<div class="some-inputs">
+				<label for="focus">onfocus et onblur</label>
+				<input id="focus" type="text" onfocus="champEvent(this, 'onfocus')" onblur="champEvent(this, 'onblur')">
+			</div>
+			<div class="some-inputs">
+				<label for="change">onchange</label>
+				<input id="change" type="text" onchange="champEvent(this, 'onchange')">
+			</div>
+			<div class="some-inputs">
+				<label for="key">key down and up</label>
+				<input id="key" type="text" onkeyup="champEvent(this, 'key up')" onkeydown="champEvent(this, 'keydown')">
+			</div>
+		</div>
+		<div class="playground" onclick="domEvent(event,this,'e kelik')">
+			<p>onclick</p>
+		</div>
+		<div class="playground" onmouseover="domEvent(event,this,'onmouseover')" onmouseout="domEvent(event,this,'onmouseout')">
+			<p>onmouseover, onmouseout</p>
+		</div>
+		<div class="playground"  onmousemove="sourisbouge(event)">
+			<p>onmousemove</p>
+		</div>
+	</body>
+</html>
+<style>
+	.some-inputs {
+		margin: 20px;
+	}
+	.playground {
+		margin: 20px;
+		background-color: aqua;
+		border: 1px black solid;
+		height: 100px;
+	}
+</style>
