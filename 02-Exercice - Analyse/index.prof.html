@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Analyse</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/global.reponse.css">
+		<script defer src="js/reponse.js"></script>
+	</head>
+	<body>
+		<div>
+			<div id="analyze-icon"></div>
+			<div id="analyze-result">
+				<h3>Resultat est 42</h3>
+			</div>
+			<div id="search-line">
+				<div>
+					<input type="text" name="searchBox" placeholder="Texte à analyser" />
+				</div>
+				<div class="btn">
+					<button id="analyze-btn" onclick="analyser()">Analyser</button>
+				</div>
+			</div>
+			<h3>Explication du code</h3>
+			<ol>
+				<li>J'ai mis dans la css display none sur les deux elements</li>
+				<li>J'ai aujouté l'évènement onclick analyser sur le bouton</li>
+				<li>analyser met processing à true (pour empecher de cliquer sur le bouton plein de fois) et appelle showProgress</li>
+				<li>showProgess affiche le gif et appelle, dans 2 secondes, showResult</li>
+				<li>Show result cache le git et affiche la réponse</li>
+			</ol>
+		</div>
+	</body>
+</html>

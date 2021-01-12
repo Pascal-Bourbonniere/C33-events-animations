@@ -5,15 +5,57 @@
 		<meta charset="utf-8"/>
 	</head>
 	<body>
-		<div id='box1' style="background-color: pink; width: 300px; height: 200px; position: absolute;" onclick="commenceABouger1()">
+		<div id='box1' style="background-color: pink; width: 300px; height: 200px; position: absolute;" 
+		onclick="commenceABouger1()">
 			Bouge-moi
 		</div>
-		<div id='box2' style="background-color: moccasin; width: 300px; height: 200px; position: absolute; left: 320px" onclick="commenceABouger2()">
+		<div id='box2' style="background-color: moccasin; width: 300px; height: 200px; position: absolute; left: 320px" 
+		onclick="commenceABouger2()">
 			moi aussi!
 		</div>
 		<script>
+
+			// Comment faire des délais
+			// 1.1 setInterval
 			const afficher = () => {
-				alert("BOO !");
+				// alert("BOO !");
+			}
+			// va executer la fonction afficher à toutes les une seconde a linfini
+			let intervalId = setInterval(afficher,1000)
+			// va arreter l'excution de l'interval
+			clearInterval(intervalId)
+
+			// 1.2 setTimeout
+			// ne s'exécute qu'une seule fois apres une seconde
+			setTimeout(afficher, 1000)
+
+			/**************************************************************************/
+
+			// 2.1 setInterval
+			const bougerBloc1 = () => {
+				console.log("je bouge")
+				const node = document.getElementById('box1')
+				// offsetTop est la distance du noeud p/r au dessus de la page web
+				if (node.offsetTop < 200){
+					node.style.top = `${node.offsetTop + 2}px` // '215px'
+				} else {
+					clearInterval(intervalId)
+					console.log("je bouge plus")
+				}
+			}
+
+			const commenceABouger1 = () => {
+				intervalId = setInterval(bougerBloc1, 10)
+			}
+
+			// 2.2 setTimeout
+			const commenceABouger2 = () => {
+				console.log("je bouge bloc 2")
+				const node = document.getElementById('box2')
+				if (node.offsetTop < 200){
+					node.style.top = `${node.offsetTop + 2}px` // '215px'
+					setTimeout(commenceABouger2, 10)
+				}
 			}
 		</script> 
 
