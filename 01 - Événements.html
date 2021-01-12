@@ -23,7 +23,10 @@
 		<div>
 			<div class="some-inputs">
 				<label for="focus">onfocus et onblur</label>
-				<input id="focus" type="text" onfocus="champEvent(this, 'onfocus')" onblur="champEvent(this, 'onblur')">
+				<input id="focus"
+				type="text"
+				onfocus="champEvent(this, 'onfocus')"
+				onblur="champEvent(this, 'onblur')">
 			</div>
 			<div class="some-inputs">
 				<label for="change">onchange</label>
@@ -48,6 +51,9 @@
 <style>
 	.some-inputs {
 		margin: 20px;
+	}
+	input:focus {
+		background-color: red;
 	}
 	.playground {
 		margin: 20px;

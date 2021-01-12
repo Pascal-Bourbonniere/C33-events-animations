@@ -3,6 +3,9 @@
 	<head>
 		<title>Les fichiers externes</title>
 		<meta charset="utf-8"/>
+		<!-- defer permet de ne pas avoir à ajouter l'event load sur window -->
+		<!-- agit comme window.addEventListener('load', () => {...}) -->
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<p id="paragraphe">

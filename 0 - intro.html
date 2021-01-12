@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="cliquer(event, this)">
+        <p>
+            allo
+        </p>
+    </div>
+    <div id="idDiv">
+        <p>
+            allo
+        </p>
+    </div>
+    <script>
+        // this qu'on a renommé node c'est la balise
+        // event correspond à l'évènement, ici le clic
+        const cliquer = (event, node) => {
+            console.log('je clic', event.pageX, event.pageY)
+        }
+        
+        // load est un mot réservré pour levent load
+        // Ce code va s'exécuter tout de suite après que le html va être chargé sur la page
+        window.addEventListener('load', () => {
+            console.log('Le document est chargé')
+            // ajout de l'écouteur de l'évènement directement dans le javascript
+            const node = document.getElementById("idDiv")
+            // onclick est un mot réservré pour levent click        
+            node.addEventListener('click', () => {
+                console.log("Je viens de me faire cliquer aussi")
+            })
+        })
+        console.log('Le document nest pas encore chargé')
+    </script>
+</body>
+</html>
+<style>
+    div {
+        width: 600px;
+        height: 600px;
+        background-color: #666;
+        float: left;
+        border: black 1px solid;
+    }
+</style>

@@ -6,15 +6,23 @@
 		
 	</head>
 	<body>
-		<div id="texte">Lorem ipsum</div>
+		<div style="background-color:red"
+			id="texte" 
+			onmouseover="modifier()"
+			onmouseout="demodifier(this)">
+				Lorem ipsum
+		</div>
 		<script>
 			//Ici, on ne passe pas de paramètres
+			//Moins bon ici
 			const modifier = () => {
-				
+				const node = document.getElementById("texte")
+				node.style.color = "#0f0"
 			}
-			const demodifier = () => {
-				
+			//Plus facile d'approche
+			const demodifier = (node) => {
+				node.style.color = "#fff"
 			}
 		</script>
 	</body>
-</html> 
+</html>
