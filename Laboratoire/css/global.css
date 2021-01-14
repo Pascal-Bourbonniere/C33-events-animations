@@ -88,6 +88,6 @@ ol {
 }
 
 .generic {
-    /*position:fixed;
-    top:90vh;*/
+    position:fixed;
+    top:90vh;
 }

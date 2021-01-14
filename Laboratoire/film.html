@@ -9,7 +9,7 @@
     <body>
 
         <div class="video-container">
-            <video src="videos/film.mp4" controls></video>
+            <video src="videos/film.mp4" controls onended="videoEnded()" onpause="videoPaused()" onplay="videoPlay()"></video>
         </div>
 
         <footer>
@@ -25,5 +25,16 @@
                 </div>
             </div>
         </footer>
+        <script>
+            const videoEnded = () => {
+                window.location.href = 'generique.html'
+            }
+            const videoPaused = () => {
+                document.body.style.backgroundColor = "grey"
+            }
+            const videoPlay = () => {
+                document.body.style.backgroundColor = "white"
+            }  
+        </script>
     </body>
 </html>

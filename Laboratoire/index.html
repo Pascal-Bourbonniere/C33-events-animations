@@ -7,6 +7,34 @@
         <link rel="stylesheet" href="css/global.css">
     </head>
     <body>
+        <div>
+            <div class="text-center">
+                <img src="img/mouettes_index.gif" alt="mouettes">
+            </div>
+            <form id='forumulaire' action="film.html" method="post" onsubmit="return validate(this)">
+                <div class="bordered-black index-form">
+                    <div class="form-line">
+                        <div class="form-label">
+                            Nom :
+                        </div>
+                        <div class="form-input">
+                            <input type="text" name="name" id="name">
+                        </div>
+                    </div>
+                    <div class="form-line">
+                        <div class="form-label">
+                            Mot de passe :
+                        </div>
+                        <div class="form-input">
+                            <input type="password" name="password" id="password">
+                        </div>
+                    </div>
+                    <div class="text-center form-button">
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <footer>
             <div class="container">
@@ -23,5 +51,17 @@
                 </div>
             </div>
         </footer>
+        <script>
+                const validate = (nodeForm) => {
+                    const nom = document.getElementById('name').value
+                    const password = document.getElementById('password').value
+                    
+                    if (nom !== 'franck' || password !== 'dion') {
+                        alert('mauvais username/mot de passe')
+                        nodeForm.reset()
+                        return false
+                    }
+                }
+        </script>
     </body>
 </html>

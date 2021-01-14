@@ -24,26 +24,14 @@
         </ol>
     </main>
     <script>
-        const afficherElem1 = () => {
-            document.getElementById('elem-1').style.opacity = 1
-        }
-        const afficherElem2 = () => {
-            document.getElementById('elem-2').style.opacity = 1
-        }
-        const afficherElem3 = () => {
-            document.getElementById('elem-3').style.opacity = 1
+        const afficherElem = (nodeId) => {
+            document.getElementById(nodeId).style.opacity = 1
         }
 
-        setTimeout(afficherElem1, 1000)
-        setTimeout(afficherElem2, 2000)
-        setTimeout(afficherElem3, 3000)
+        setTimeout(afficherElem, 1000, 'elem-1')
+        setTimeout(afficherElem, 2000, 'elem-2')
+        setTimeout(afficherElem, 3000, 'elem-3')
 
-        //IL SERAIT AUSSI POSSIBLE DE PASSER DES VALEURS EN PARAMETRES COMME CA!
-        // const afficherElem1 = (elementId) => {
-        //     // elementId vaut la valeur elem1
-        //     document.getElementById(elementId).style.opacity = 1
-        // }
-        // setTimeout(afficherElem1, 1000, 'elem1')
     </script>
 </body>
 </html>
